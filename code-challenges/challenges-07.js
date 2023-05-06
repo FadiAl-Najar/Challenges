@@ -21,17 +21,14 @@
 //  2- The first letters of the firstName and lastName should be capital letter
 
 const objLat = (obj) => {
-    // write your code here
-   
-//     if(obj.firstName.charAt(0) == obj.firstName.charAt(0) && obj.lastName.charAt(0) == obj.lastName.charAt(0)){
-//     let display = `my name is ${obj.firstName.charAt(0).toUpperCase() + obj.firstName.slice(1)} ${obj.lastName.charAt(0).toUpperCase() + obj.lastName.slice(1)} I am ${obj.age} YO, and I am love ${obj.hobby}`;
-// }
-const {firstName, lastName, age, hobby} = obj;
-const fullName = `${firstName.charAt(0).toUpperCase()}${firstName.slice(1)} ${lastName.charAt(0).toUpperCase()}${lastName.slice(1)}`;
-return `my name is ${fullName} I am ${age} YO, and I love ${hobby}.`;
+    if(obj.firstName.charAt(0) == obj.firstName.charAt(0) && obj.lastName.charAt(0) == obj.lastName.charAt(0)){
+        //     let display = `my name is ${obj.firstName.charAt(0).toUpperCase() + obj.firstName.slice(1)} ${obj.lastName.charAt(0).toUpperCase() + obj.lastName.slice(1)} I am ${obj.age} YO, and I am love ${obj.hobby}`;
+        // }
+        const {firstName, lastName, age, hobby} = obj;
+        const fullName = `${firstName.charAt(0).toUpperCase()}${firstName.slice(1)} ${lastName.charAt(0).toUpperCase()}${lastName.slice(1)}`;
+        return `my name is ${fullName} I am ${age} YO, and I love ${hobby}.`;
+    }
 };
-
-
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -95,7 +92,7 @@ return `my name is ${fullName} I am ${age} YO, and I love ${hobby}.`;
 
 const cvFormatter = (arr) => {
     // write your code here
-//     let cvs = [];
+    //     let cvs = [];
 // for(let i = 0; i < arr.length; i++){
 //     let applicants = arr[i]
 //     if(applicants.yearsOfExperience > 1 && applicants.firstName !== 'null' && applicants.lastName !== 'null'){
@@ -115,7 +112,8 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 return cvs;
-}
+
+};
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -139,37 +137,35 @@ return cvs;
 //  Note that:
 //  1- rejectedApplicants are applications that has both the names empty or null and whoever have one year or less of Experience
 
-
 const applicationsStatics = (arr) => {
-  let pythonCount = 0;
-  let jsCount = 0;
-  let dotNetCount = 0;
-  let javaCount = 0;
-  let totalApplicants = 0;
-  let rejectedApplicants = 0;
     // write your code here
-    for(let i = 0; i < arr.length; i++){
-        let applicants = arr[i];
-        if(applicants.yearsOfExperience > 1){ // if(applicants.yearsOfExperience > 1 && applicants.firstName !== 'null' && applicants.lastName !== 'null'){
-           
-           switch(applicants.tech){
-                case 'Python': pythonCount++;
-                
-                case 'JavaScript': jsCount++;
-               
-                case '.Net': dotNetCount++;
-                
-                case 'Java': javaCount++;
-                
-                default: totalApplicants++;
-               
-           }
-        }else {
-            rejectedApplicants++;
-        }
-    }
-   
-
+    let pythonCount = 0;
+    let jsCount = 0;
+    let dotNetCount = 0;
+    let javaCount = 0;
+    let totalApplicants = 0;
+    let rejectedApplicants = 0;
+      // write your code here
+      for(let i = 0; i < arr.length; i++){
+          let applicants = arr[i];
+          if(applicants.yearsOfExperience > 1){ // if(applicants.yearsOfExperience > 1 && applicants.firstName !== 'null' && applicants.lastName !== 'null'){
+             
+             switch(applicants.tech){
+                  case 'Python': pythonCount++;
+                  
+                  case 'JavaScript': jsCount++;
+                 
+                  case '.Net': dotNetCount++;
+                  
+                  case 'Java': javaCount++;
+                  
+                  default: totalApplicants++;
+                 
+             }
+          }else {
+              rejectedApplicants++;
+          }
+      }
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -296,21 +292,21 @@ let data = {
 //  2- You need to round the average to the nearest lower number 
 
 const classesAvg = (data) => {
+    // write your code here
     for (let i = 0; i < data.grades.length; i++) {
-      let grade = data.grades[i];
-      for (let j = 0; j < grade.numberOfClasses; j++) {
-        let currentClass = grade.classes[j];
-        let sum = 0;
-        for (let k = 0; k < currentClass.classScores.length; k++) {
-          sum += currentClass.classScores[k];
-        
-        let average = Math.floor(sum / currentClass.classScores.length);
-        currentClass.avg = average;
+        let grade = data.grades[i];
+        for (let j = 0; j < grade.numberOfClasses; j++) {
+          let currentClass = grade.classes[j];
+          let sum = 0;
+          for (let k = 0; k < currentClass.classScores.length; k++) {
+            sum += currentClass.classScores[k];
+          
+          let average = Math.floor(sum / currentClass.classScores.length);
+          currentClass.avg = average;
+          }
         }
       }
-    }
-  };
-  
+};
 // -------------------------------------------------------------------------------------------------------
 
 module.exports = { objLat, cvFormatter, applicationsStatics, classesAvg };
